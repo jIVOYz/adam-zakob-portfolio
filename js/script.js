@@ -42,3 +42,45 @@ document.addEventListener('DOMContentLoaded', () => { // Структура ст
         el.style.height = (el.scrollHeight) + 'px';
     });
 });
+
+// Scroll 
+
+const link = document.querySelector('a');
+link.addEventListener("click", function (e) {
+  e.preventDefault();
+});
+
+const menuAbout = document.querySelectorAll('.menu__link_about');
+const menuServices = document.querySelectorAll('.menu__link_services');
+const menuPortfolio = document.querySelectorAll('.menu__link_portfolio');
+const menuBlog = document.querySelectorAll('.menu__link_blog');
+
+const about = document.querySelector('.about');
+const services = document.querySelector('.services');
+const portfolio = document.querySelector('.portfolio');
+const blog = document.querySelector('.blog');
+
+for (let i = 0; i < menuPortfolio.length; i++) {
+  const el = menuPortfolio[i];
+  el.addEventListener("click", function (e) {
+    portfolio.scrollIntoView(top);
+  });
+}
+for (let i = 0; i < menuBlog.length; i++) {
+  const el = menuBlog[i];
+  el.addEventListener("click", function (e) {
+    blog.scrollIntoView(top);
+  });
+}
+for (let i = 0; i < menuServices.length; i++) {
+  const el = menuServices[i];
+  el.addEventListener("click", function (e) {
+    services.scrollIntoView(top);
+  });
+}
+for (let i = 0; i < menuAbout.length; i++) {
+  const el = menuAbout[i];
+  el.addEventListener("click", function (e) {
+    window.scrollTo(0, 0);
+  });
+}
